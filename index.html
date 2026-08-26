@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: radial-gradient(circle at center, #1a1c23 0%, #0d0e12 60%, #050506 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -22,32 +22,98 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 40px;
             border-radius: 20px;
             text-align: center;
             color: white;
             max-width: 450px;
             width: 100%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        .subtitle {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 10px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        /* --- Minecraft 3D Icon CSS Com Texturas Pixeladas --- */
+        .cube-container {
+            perspective: 800px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 6s infinite linear;
+        }
+
+        @keyframes spin {
+            from { transform: rotateX(-22deg) rotateY(0deg); }
+            to { transform: rotateX(-22deg) rotateY(360deg); }
+        }
+
+        .face {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            background-size: cover;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+        }
+
+        /* Posição 3D das faces */
+        .front  { transform: translateZ(20px); filter: brightness(0.9); }
+        .back   { transform: rotateY(180deg) translateZ(20px); filter: brightness(0.7); }
+        .left   { transform: rotateY(-90deg) translateZ(20px); filter: brightness(0.75); }
+        .right  { transform: rotateY(90deg) translateZ(20px); filter: brightness(0.85); }
+        .top    { transform: rotateX(90deg) translateZ(20px); filter: brightness(1.1); }
+        .bottom { transform: rotateX(-90deg) translateZ(20px); filter: brightness(0.5); }
+
+        /* Texturas Pixel Art (SVG Data-URIs nativos) */
+        .top {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2359903a'/%3E%3Crect x='1' y='2' width='1' height='1' fill='%2346732e'/%3E%3Crect x='5' y='1' width='2' height='1' fill='%2346732e'/%3E%3Crect x='3' y='4' width='1' height='2' fill='%2346732e'/%3E%3Crect x='10' y='3' width='2' height='1' fill='%2346732e'/%3E%3Crect x='12' y='8' width='1' height='2' fill='%2346732e'/%3E%3Crect x='7' y='11' width='2' height='1' fill='%2346732e'/%3E%3Crect x='2' y='13' width='1' height='2' fill='%2346732e'/%3E%3Crect x='14' y='14' width='1' height='1' fill='%2346732e'/%3E%3Crect x='3' y='1' width='1' height='1' fill='%2371b34c'/%3E%3Crect x='8' y='5' width='2' height='1' fill='%2371b34c'/%3E%3Crect x='0' y='7' width='1' height='2' fill='%2371b34c'/%3E%3Crect x='13' y='2' width='1' height='2' fill='%2371b34c'/%3E%3Crect x='4' y='9' width='2' height='1' fill='%2371b34c'/%3E%3Crect x='11' y='12' width='1' height='2' fill='%2371b34c'/%3E%3C/svg%3E");
+        }
+
+        .side {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23866043'/%3E%3Crect x='2' y='5' width='2' height='1' fill='%23573d26'/%3E%3Crect x='9' y='6' width='1' height='2' fill='%23573d26'/%3E%3Crect x='4' y='9' width='2' height='1' fill='%23573d26'/%3E%3Crect x='12' y='11' width='1' height='2' fill='%23573d26'/%3E%3Crect x='1' y='13' width='2' height='1' fill='%23573d26'/%3E%3Crect x='7' y='14' width='2' height='1' fill='%23573d26'/%3E%3Crect x='6' y='5' width='1' height='2' fill='%23a07453'/%3E%3Crect x='13' y='4' width='2' height='1' fill='%23a07453'/%3E%3Crect x='0' y='8' width='2' height='1' fill='%23a07453'/%3E%3Crect x='10' y='9' width='1' height='2' fill='%23a07453'/%3E%3Crect x='5' y='12' width='1' height='2' fill='%23a07453'/%3E%3Crect x='14' y='13' width='1' height='2' fill='%23a07453'/%3E%3Cpath d='M0 0h16v3H0z' fill='%2359903a'/%3E%3Cpath d='M1 3h2v1H1zM5 3h1v2H5zM8 3h3v1H8zM13 3h2v2h-2z' fill='%2359903a'/%3E%3Crect x='2' y='1' width='2' height='1' fill='%2346732e'/%3E%3Crect x='9' y='0' width='2' height='1' fill='%2346732e'/%3E%3Crect x='14' y='1' width='1' height='2' fill='%2346732e'/%3E%3Crect x='0' y='1' width='1' height='1' fill='%2371b34c'/%3E%3Crect x='6' y='0' width='2' height='1' fill='%2371b34c'/%3E%3Crect x='12' y='0' width='1' height='2' fill='%2371b34c'/%3E%3C/svg%3E");
+        }
+
+        .bottom {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23866043'/%3E%3Crect x='1' y='1' width='2' height='1' fill='%23573d26'/%3E%3Crect x='6' y='3' width='1' height='2' fill='%23573d26'/%3E%3Crect x='12' y='2' width='2' height='1' fill='%23573d26'/%3E%3Crect x='3' y='7' width='2' height='1' fill='%23573d26'/%3E%3Crect x='9' y='8' width='1' height='2' fill='%23573d26'/%3E%3Crect x='14' y='10' width='1' height='2' fill='%23573d26'/%3E%3Crect x='2' y='12' width='2' height='1' fill='%23573d26'/%3E%3Crect x='7' y='13' width='2' height='1' fill='%23573d26'/%3E%3Crect x='4' y='1' width='1' height='2' fill='%23a07453'/%3E%3Crect x='9' y='2' width='2' height='1' fill='%23a07453'/%3E%3Crect x='14' y='4' width='1' height='2' fill='%23a07453'/%3E%3Crect x='0' y='6' width='2' height='1' fill='%23a07453'/%3E%3Crect x='6' y='9' width='2' height='1' fill='%23a07453'/%3E%3Crect x='11' y='12' width='1' height='2' fill='%23a07453'/%3E%3Crect x='4' y='14' width='2' height='1' fill='%23a07453'/%3E%3C/svg%3E");
+        }
+        /* --------------------------------- */
+
         .ip-box {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.5);
             padding: 12px;
             border-radius: 8px;
             font-family: monospace;
             font-size: 1.1rem;
             margin: 20px 0;
             letter-spacing: 1px;
-            border: 1px dashed rgba(255, 255, 255, 0.3);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
         }
 
         .cta-buttons {
@@ -68,29 +134,49 @@
 
         .btn-primary {
             background: #ffffff;
-            color: #667eea;
+            color: #0d0e12;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.25);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.08);
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.18);
             transform: translateY(-2px);
+        }
+
+        .tip {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>✨ Utopia 2</h1>
+        <h1>
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="face top"></div>
+                    <div class="face front side"></div>
+                    <div class="face back side"></div>
+                    <div class="face left side"></div>
+                    <div class="face right side"></div>
+                    <div class="face bottom"></div>
+                </div>
+            </div>
+            Utopia 2
+        </h1>
+        <p class="subtitle">Um servidor de Minecraft Bedrock com mods (inspirado em utopia)</p>
         
         <div class="ip-box">
             IP: 144.31.46.18:10294
@@ -98,13 +184,13 @@
 
         <div class="cta-buttons">
             <a href="minecraft://?addExternalServer=Utopia|144.31.46.18:10294" class="btn btn-primary">
-                Entrar no Servidor (Principal)
+                Entrar (Principal)
             </a>
             
-            <!-- Adicione o IP/Link alternativo no href abaixo -->
             <a href="minecraft://?addExternalServer=Utopia-Mirror|144.31.46.18:11991" class="btn btn-secondary">
-                Entrar via Mirror (Secundário)
+                Entrar (Secundário)
             </a>
+            <p class="tip">Ao entrar no jogo basta ir na aba de servidores e procurar pelo nome "Utopia"</p>
         </div>
     </div>
 </body>
