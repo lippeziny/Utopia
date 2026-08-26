@@ -1,0 +1,90 @@
+<div class="server-card">
+  <div class="server-status">
+    <span class="status-indicator online"></span>
+    <span class="status-text">Servidor Utopia</span>
+  </div>
+  
+  <p class="server-ip">IP: 144.31.46.18:10294</p>
+
+  <a href="minecraft://?addExternalServer=Utopia|144.31.46.18:10294" class="btn-minecraft">
+    CLIQUE AQUI PARA ENTRAR
+  </a>
+</div>
+
+<style>
+  /* Estilo do Card Principal */
+  .server-card {
+    background-color: #1e1e1e;
+    border: 3px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 400px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  /* Indicador de Status */
+  .server-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .status-indicator.online {
+    background-color: #38e54d;
+    box-shadow: 0 0 8px #38e54d;
+  }
+  .status-text {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Texto do IP */
+  .server-ip {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  /* O Botão Estilo Minecraft Moderno */
+  .btn-minecraft {
+    display: inline-block;
+    background: linear-gradient(180deg, #5c8e32 0%, #3b5c20 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: 2px solid #2e4518;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Efeito ao passar o mouse */
+  .btn-minecraft:hover {
+    background: linear-gradient(180deg, #6ca73b 0%, #466d26 100%);
+    box-shadow: 0 0 12px rgba(92, 142, 50, 0.6);
+    transform: translateY(-1px);
+  }
+
+  /* Efeito ao clicar */
+  .btn-minecraft:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+</style>
