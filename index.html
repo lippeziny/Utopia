@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utopia - Bem-vindo</title>
+    <title>Utopia - Conectar</title>
     <style>
         * {
             margin: 0;
@@ -21,208 +21,90 @@
             padding: 20px;
         }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .hero {
-            text-align: center;
-            color: white;
-            margin-bottom: 60px;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            margin-bottom: 30px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-
-        .btn {
-            padding: 14px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #667eea;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .feature-card {
+        .card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 40px;
-            border-radius: 15px;
-            color: white;
+            border-radius: 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease-out;
+            color: white;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
+        h1 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
-        .feature-card p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            line-height: 1.6;
+        .ip-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            letter-spacing: 1px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
         }
 
-        .footer {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.9rem;
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .footer a {
-            color: white;
+        .btn {
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
+            display: block;
         }
 
-        .footer a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+        .btn-primary {
+            background: #ffffff;
+            color: #667eea;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 250px;
-            }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="hero">
-            <h1>✨ Utopia</h1>
-            <p>Bem-vindo ao servidor com mods de Utopia 2</p>
-            <div class="cta-buttons">
-                <a href="https://github.com/lippeziny/Utopia" class="btn btn-primary">Ver no GitHub</a>
-                <a class="btn btn-secondary"
-  href="minecraft://?addExternalServer=Utopia|144.31.46.18:10294" class="btn-minecraft">
-    CLIQUE AQUI PARA ENTRAR
-                </a>
-            </div>
+    <div class="card">
+        <h1>✨ Utopia 2</h1>
+        
+        <div class="ip-box">
+            IP: 144.31.46.18:10294
         </div>
 
-        <div class="features">
-            <div class="feature-card" style="animation-delay: 0.2s;">
-                <div class="feature-icon">🚀</div>
-                <h3>Rápido</h3>
-                <p>Performance otimizada e carregamento instantâneo para melhor experiência</p>
-            </div>
-            <div class="feature-card" style="animation-delay: 0.4s;">
-                <div class="feature-icon">🎨</div>
-                <h3>Bonito</h3>
-                <p>Design moderno e responsivo que funciona em todos os dispositivos</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>Servidor de @lippe.klvn by <a href="https://github.com/lippeziny">lippeziny</a></p>
-            <p>&copy; 2026 Utopia</p>
+        <div class="cta-buttons">
+            <a href="minecraft://?addExternalServer=Utopia|144.31.46.18:10294" class="btn btn-primary">
+                Entrar no Servidor (Principal)
+            </a>
+            
+            <!-- Adicione o IP/Link alternativo no href abaixo -->
+            <a href="minecraft://?addExternalServer=Utopia-Mirror|144.31.46.18:11991" class="btn btn-secondary">
+                Entrar via Mirror (Secundário)
+            </a>
         </div>
     </div>
 </body>
